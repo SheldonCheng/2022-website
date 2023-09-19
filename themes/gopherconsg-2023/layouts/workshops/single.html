@@ -1,0 +1,37 @@
+{{ define "main" }}
+  <table class="text-left">
+    <colgroup>
+      <col class="w-[32%]" />
+      <col class="w-[68%]" />
+    </colgroup>
+    <thead>
+      <tr class="text-2xl">
+        <th class="pb-8">Schedule</th>
+        <th class="pb-8">Topic</th>
+      </tr>
+    </thead>
+    <tbody class="align-top">
+      {{ range $.Site.Data.workshops.workshops }}
+        <tr class="border-t border-t-gray-400">
+          <td class="pr-8 pt-6 pb-8 whitespace-nowrap">
+            <div class="font-semibold text-lg mb-1">
+              {{ .date }}
+            </div>
+            <div class="font-semibold text-lg mb-8">
+              {{ .time }}
+            </div>
+            <div class="mb-8">
+              {{ .venue | markdownify}}
+            </div>
+            <div>{{ .additional }}</div>
+          </td>
+          <td class="pt-6 pb-8">
+            <div class="text-2xl font-semibold mb-1">{{ .title }}</div>
+            <div class="font-semibold mb-8">By <a class="link" href="{{ .speakerLink }}">{{ .speaker }}</a></div>
+            {{ .description | markdownify }}</td>
+          </td>
+        </tr>
+      {{ end }}
+    </tbody>
+  </table>
+{{ end }}

@@ -1,0 +1,28 @@
+{{ define "main" }}
+    <table class="text-left">
+      <colgroup>
+        <col class="w-[30%]" />
+        <col class="w-[32%]" />
+        <col class="w-[38%]" />
+      </colgroup>
+      <thead>
+        <tr class="text-2xl">
+          <th class="pb-8">Time</th>
+          <th class="pb-8">Topic</th>
+          <th class="pb-8">Description</th>
+        </tr>
+      </thead>
+      <tbody class="align-top">
+        {{ range $.Site.Data.schedule.schedule }}
+          <tr class="border-t border-t-gray-400" id="{{ .id }}">
+            <td class="pr-8 pt-6 pb-8 font-semibold text-lg whitespace-nowrap">{{ .time }}</td>
+            <td class="pr-14 pt-6 pb-8">
+              <div class="text-2xl font-semibold mb-8">{{ .title }}</div>
+              <div class="font-semibold">By <a class="link" href="{{ .speakerLink }}">{{ .speaker }}</a></div>
+            </td>
+            <td class="pt-6 pb-8">{{ .description }}</td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+{{ end }}
