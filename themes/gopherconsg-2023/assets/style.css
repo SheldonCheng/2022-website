@@ -568,6 +568,38 @@ video {
   }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.top-full {
+  top: 100%;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -609,10 +641,6 @@ video {
   margin-bottom: 7rem;
 }
 
-.ml-auto {
-  margin-left: auto;
-}
-
 .mr-8 {
   margin-right: 2rem;
 }
@@ -635,6 +663,18 @@ video {
 
 .table {
   display: table;
+}
+
+.hidden {
+  display: none;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .w-\[30\%\] {
@@ -728,6 +768,15 @@ video {
   border-top-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
 .py-14 {
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
@@ -747,6 +796,10 @@ video {
 
 .pr-8 {
   padding-right: 2rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .pt-6 {
@@ -844,6 +897,16 @@ p {
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10);
 }
 
+.navbar-toggle {
+  margin-left: auto;
+  color: var(--brand-blue);
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(20, 200, 224, 0.2);
+  }
+}
+
 .menu-item {
   font-weight: 600;
 }
@@ -852,9 +915,15 @@ p {
   display: block;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
-  padding: 1.4375rem 0;
+  padding: 0.5rem 0;
   line-height: 2;
   text-decoration: none;
+  text-align: center;
+  @media (min-width: 768px) {
+    padding: 1.4375rem 0;
+
+    text-align: left;
+  }
 }
 
 .menu-item a:hover {
@@ -863,7 +932,9 @@ p {
 
 .menu-item.active a {
   color: var(--brand-blue);
-  border-bottom-color: var(--brand-blue);
+  @media (min-width: 768px) {
+    border-bottom-color: var(--brand-blue);
+  }
 }
 
 .cta-button {
@@ -978,5 +1049,43 @@ p {
 @media (min-width: 640px) {
   .sm\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:static {
+    position: static;
+  }
+
+  .md\:ml-auto {
+    margin-left: auto;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:w-auto {
+    width: auto;
+  }
+
+  .md\:flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .md\:border-0 {
+    border-width: 0px;
+  }
+
+  .md\:p-0 {
+    padding: 0px;
   }
 }
