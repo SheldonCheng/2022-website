@@ -1,14 +1,23 @@
 {{ define "main" }}
   <ul>
     {{ range $.Site.Data.speakers.speakers }}
-      <li class="flex pb-16 mb-16 border-b border-b-gray-400 last:border-b-0" id="{{ .id }}">
+      <li class="md:flex pb-16 mb-16 border-b border-b-gray-400 last:border-b-0" id="{{ .id }}">
         {{ $image := resources.Get (printf "images/speakers/%s" .image) }}
-        <figure class="flex-0 basis-[320px] mr-8">
-          <img src="{{ $image.Permalink }}">
-        </figure>
+        <div class="flex mb-4 md:mb-8">
+          <figure class="flex-0 basis-1/2 md:basis-[320px] mr-4 md:mr-8">
+            <img src="{{ $image.Permalink }}">
+          </figure>
+          <div class="md:hidden">
+            <h3 class="mb-4">{{ .name }}</h3>
+            <div class="mb-6">{{ .title }}, {{ .company }}</div>
+          </div>
+        </div>
+        
         <div class="flex-1">
-          <h3 class="mb-4">{{ .name }}</h3>
-          <div class="mb-6">{{ .title }}, {{ .company }}</div>
+          <div class="hidden md:block">
+            <h3 class="mb-4">{{ .name }}</h3>
+            <div class="mb-6">{{ .title }}, {{ .company }}</div>
+          </div>
           <div class="mb-10">{{ .description | markdownify }}</div>
           <a class="link" href="{{ .topicLink }}">{{ .topicTitle }}</a>
         </div>
