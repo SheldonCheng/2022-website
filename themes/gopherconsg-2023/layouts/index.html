@@ -36,8 +36,8 @@
     <div class="partners mb-8">
       <h2 class="pt-[14rem] mb-[7rem] text-center">Our Partners</h2>
       <div class="container">
-        <div class="flex items-center py-14 border-b border-b-gray-500">
-          <strong class="mr-8">Platinum</strong>
+        <div class="md:flex items-center py-14 border-b border-b-gray-500 text-center">
+          <strong class="block text-xl md:text-base md:mr-8 mb-8 md:mb-0">Platinum</strong>
           <div class="flex items-center flex-1 justify-center gap-4 flex-wrap">
             {{ with $.Site.Data.index.sponsors.platinum}}
               {{ range . }}
@@ -48,8 +48,8 @@
           </div>
         </div>
           
-        <div class="flex items-center py-14 border-b border-b-gray-500">
-          <strong class="mr-8">Gold</strong>
+        <div class="md:flex items-center py-14 border-b border-b-gray-500 text-center">
+          <strong class="block text-xl md:text-base md:mr-8 mb-8 md:mb-0">Gold</strong>
           <div class="flex items-center flex-1 justify-center gap-4 flex-wrap">
             {{ with $.Site.Data.index.sponsors.gold}}
               {{ range . }}
@@ -60,8 +60,8 @@
           </div>
         </div>
 
-        <div class="flex items-center py-14">
-          <strong class="mr-8">Silver</strong>
+        <div class="md:flex items-center py-14 text-center">
+          <strong class="block text-xl md:text-base md:mr-8 mb-8 md:mb-0">Silver</strong>
           <div class="flex items-center flex-1 justify-center gap-4 flex-wrap">
             {{ with $.Site.Data.index.sponsors.silver}}
               {{ range . }}
