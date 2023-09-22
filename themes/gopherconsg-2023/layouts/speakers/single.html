@@ -4,7 +4,7 @@
       <li class="md:flex pb-16 mb-16 border-b border-b-gray-400 last:border-b-0" id="{{ .id }}">
         {{ $image := resources.Get (printf "images/speakers/%s" .image) }}
         <div class="flex mb-4 md:mb-8">
-          <figure class="flex-0 basis-1/2 md:basis-[320px] mr-4 md:mr-8">
+          <figure class="w-24 md:w-[320px] mr-4 md:mr-8">
             <img src="{{ $image.Permalink }}">
           </figure>
           <div class="md:hidden">
